@@ -1,0 +1,54 @@
+
+2. Enter your username when prompted
+
+3. To host a chat (server mode):
+   - Select "Host Chat (Server)"
+   - Enter the IP address to bind to (use 127.0.0.1 for local testing)
+   - Enter the port number (e.g., 5555)
+   - Click "Connect"
+   - Wait for a client to connect
+
+4. To join a chat (client mode):
+   - Select "Join Chat (Client)"
+   - Enter the server's IP address
+   - Enter the server's port number
+   - Click "Connect"
+
+5. Once connected, the application will automatically exchange encryption keys
+
+6. When the encryption status shows "Secure", you can begin sending encrypted messages
+
+## How It Works
+
+1. **Connection Establishment**:
+   - Server listens for incoming connections
+   - Client connects to the server
+
+2. **Key Exchange**:
+   - Both parties generate RSA key pairs
+   - Public keys are exchanged
+   - A secure AES session key is generated and exchanged using RSA encryption
+
+3. **Secure Messaging**:
+   - All messages are encrypted with AES-256 using the session key
+   - Messages include the sender's username and timestamp
+   - The receiver decrypts messages using the shared session key
+
+## Educational Purpose
+
+This application is designed for educational purposes to demonstrate:
+
+- Socket programming for network communication
+- Public key cryptography for secure key exchange
+- Symmetric encryption for efficient message security
+- Secure application design principles
+
+## Limitations
+
+- This implementation is for demonstration and learning purposes
+- It does not implement certificate validation or perfect forward secrecy
+- For production use, established secure messaging protocols should be used
+
+## License
+
+This project is available for educational use.
